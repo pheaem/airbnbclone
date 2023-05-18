@@ -26,25 +26,26 @@ const LoginModal = () => {
         }
     });
 
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const onSubmit: SubmitHandler<FieldValues> = 
+    (data) => {
         setIsLoading(true);
 
-        signIn('credentials', {
-            ...data,
-            redirect: false,
+        signIn('credentials', { 
+        ...data, 
+        redirect: false,
         })
         .then((callback) => {
-            setIsLoading(false);
+        setIsLoading(false);
 
-            if(callback?.ok){
-                toast.success('Logged in');
-                router.refresh();
-                loginModal.onClose();
-            }
-
-            if(callback?.error){
-                toast.error(callback.error);
-            }
+        if (callback?.ok) {
+            toast.success('Logged in');
+            router.refresh();
+            loginModal.onClose();
+        }
+        
+        if (callback?.error) {
+            toast.error(callback.error);
+        }
         });
     }
 
@@ -61,7 +62,6 @@ const LoginModal = () => {
                 register={register}
                 errors={errors}
                 required
-                type="email"
             />
             {/* <Input
                 id="name"

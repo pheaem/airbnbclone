@@ -6,7 +6,7 @@ import { BiDollar } from "react-icons/bi";
 interface InputProps {
     id: string;
     label: string;
-    type: string;
+    type?: string;
     disabled?: boolean;
     formatPrice?: boolean;
     required?: boolean;
@@ -15,7 +15,7 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({
-    id, label, type = 'text', disabled, formatPrice, register, required, errors
+    id, label, type = "text", disabled, formatPrice, register, required, errors
 }) => {
     return ( 
         <div className="w-full relative">

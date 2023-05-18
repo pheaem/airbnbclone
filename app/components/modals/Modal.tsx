@@ -36,7 +36,7 @@ const Modal: React.FC<ModalProps> = (
             onClose();
         }, 300);
       },
-      [disabled, onClose]
+      [onClose, disabled]
     );
 
     const handleSubmit = useCallback(
@@ -46,7 +46,7 @@ const Modal: React.FC<ModalProps> = (
         }
         onSubmit();
       },
-      [disabled, onSubmit]
+      [onSubmit, disabled]
     );
 
     const handleSecondaryAction = useCallback(
@@ -56,7 +56,7 @@ const Modal: React.FC<ModalProps> = (
         }
         secondaryAction();
       },
-      [disabled, secondaryAction]
+      [secondaryAction, disabled]
     );
 
     if (!isOpen) {
